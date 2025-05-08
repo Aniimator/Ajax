@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Fetch API #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Estados</h1>
+
+    <script>
+        const url = 'dados/estados.json'
+        fetch(url)
+        .then(resp => resp.json())
+        .then(estados => {
+            const itens = estados.reduce(
+                (html, estado) => html + `<li>${estado.nome}</li>`,''
+            )
+
+            document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+        })
+    </script>
+</body>
+
+<!--
+
+Nullen (personagem)
+
+Aparencia atual: uma entidade totalmente escura semelhante a matéria vazia de Punkin. possuindo cabelos totalmente espantados uma para cada mecha, olhos apresentando uma iluminação branca, um tamanho relativamente normal (1,77)
+
+Descrição:
+
+Nullen é uma especie de sentimento, não sei como explicar como seria isso, mas ele é um personagem arrependido de suas ações passadas (matança em grande escala) além  de ter se tornado alguém muito rude e sem emoções.
+Foi alguem que tentou mudar quando percebeu a possibilidade, mas que nunca conseguiu se livrar 100% de sua personalidade antiga, até que um dia ele se frusta e essa personalidade acaba tomando vida propria, um
+corpo novo. trazendo o caos que ele queria tanto que acontecesse, enquanto Nullen, acaba se deformando, e fugindo de tudo novamente, para a floresta do vazio...
+
+O sentido por trás disso é alguem que decide se mudar completamente mas nunca consegue, mesmo tentando de tudo para que isso acabasse.
+A ficção por trás é que essa personalidade acaba tendo uma forma física depois de um surto que ele teve, e ela acaba se clonando, fazendo tudo o que bem entendia sem descanso algum, caos.
+
+-->
